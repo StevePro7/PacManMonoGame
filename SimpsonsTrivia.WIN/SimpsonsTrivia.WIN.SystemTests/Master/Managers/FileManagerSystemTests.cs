@@ -18,10 +18,8 @@ namespace WindowsGame.SystemTests.Master.Managers
 		[Test]
 		public void LoadTxtTest()
 		{
-			DifficultyType type = DifficultyType.Easy;
-
-			String file = String.Format("{0}{1}/{2}/{3}/{4}.txt", CONTENT_ROOT, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY,
-				Constants.LEVELS_DIRECTORY, type);
+			const String type = "Grid";
+			String file = String.Format("{0}{1}/{2}/{3}/{4}.txt", CONTENT_ROOT, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY, Constants.LEVELS_DIRECTORY, type);
 
 			var data = FileManager.LoadTxt(file);
 			Console.WriteLine("Number Lines: " + data.Count);

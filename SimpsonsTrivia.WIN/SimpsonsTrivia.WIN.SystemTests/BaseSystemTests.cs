@@ -28,8 +28,8 @@ namespace WindowsGame.SystemTests
 		protected IFileManager FileManager;
 		protected ILogger Logger;
 
-		// mklink /D C:\SimpsonsTrivia.XNA.Content  C:\SVN\SimpsonsTrivia\SimpsonsTrivia.XNA\SimpsonsTrivia.XNA\SimpsonsTrivia.XNA\bin\x86\Debug\
-		protected const String CONTENT_ROOT = @"C:\SimpsonsTrivia.XNA.Content\";
+		// mklink /D C:\PacMan.WIN.Content  E:\GitHub\StevePro7\PacManMonoGame\SimpsonsTrivia.WIN\SimpsonsTrivia.WIN\bin\x86\Debug\
+		protected const String CONTENT_ROOT = @"C:\PacMan.WIN.Content\";
 
 #pragma warning disable 618
 		[TestFixtureSetUp]
