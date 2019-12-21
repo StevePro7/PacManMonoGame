@@ -46,6 +46,43 @@ namespace WindowsGame.Common.Managers
 			// Textures.
 			Assets.SpritesheetTexture = LoadTexture(SPRITE_NAME);
 
+			// Bonus.
+			Assets.AppleTexture = LoadBonusTexture("Apple");
+			Assets.BananaTexture = LoadBonusTexture("Banana");
+			Assets.BellTexture = LoadBonusTexture("Bell");
+			Assets.CherryTexture = LoadBonusTexture("Cherry");
+			Assets.KeyTexture = LoadBonusTexture("Key");
+			Assets.OrangeTexture = LoadBonusTexture("Orange");
+			Assets.PearTexture = LoadBonusTexture("Pear");
+			Assets.PretzelTexture = LoadBonusTexture("Pretzel");
+			Assets.StrawberryTexture = LoadBonusTexture("Strawberry");
+
+
+			// Sprites.
+			Assets.BoardTexture = LoadSpritesTexture("Board");
+			Assets.BoardFlashTexture = LoadSpritesTexture("BoardFlash");
+			Assets.CrumpTexture = LoadSpritesTexture("Crump");
+			Assets.DyingSheetNewTexture = LoadSpritesTexture("DyingSheetNew");
+			Assets.ExtraLifeTexture = LoadSpritesTexture("ExtraLife");
+			Assets.GhostBaseTexture = LoadSpritesTexture("GhostBase");
+			Assets.GhostBase2Texture = LoadSpritesTexture("GhostBase2");
+			Assets.GhostChasedTexture = LoadSpritesTexture("GhostChased");
+			Assets.GhostEyesTexture = LoadSpritesTexture("GhostEyes");
+			Assets.GhostEyesCenterTexture = LoadSpritesTexture("GhostEyesCenter");
+			Assets.PacManEating1Texture = LoadSpritesTexture("PacManEating1");
+			Assets.PacManEating2Texture = LoadSpritesTexture("PacManEating2");
+			Assets.PacManEating3Texture = LoadSpritesTexture("PacManEating3");
+			Assets.PacManEating4Texture = LoadSpritesTexture("PacManEating4");
+			Assets.PacManEating5Texture = LoadSpritesTexture("PacManEating5");
+			Assets.PacManEating6Texture = LoadSpritesTexture("PacManEating6");
+			Assets.PacManEating7Texture = LoadSpritesTexture("PacManEating7");
+			Assets.PacManEating8Texture = LoadSpritesTexture("PacManEating8");
+			Assets.PacManEating9Texture = LoadSpritesTexture("PacManEating9");
+			Assets.PowerPillTexture = LoadSpritesTexture("PowerPill");
+			Assets.SelectionTexture = LoadSpritesTexture("Selection");
+			Assets.TitleTexture = LoadSpritesTexture("Title");
+
+
 			// Songs.
 			Assets.TitleMusicSong = Engine.Content.Load<Song>(soundRoot + TITLE_MUSIC_NAME);
 			Assets.GameOverSong = Engine.Content.Load<Song>(soundRoot + GAME_OVER_NAME);
@@ -75,6 +112,14 @@ namespace WindowsGame.Common.Managers
 		private Texture2D LoadTexture(String assetName)
 		{
 			return ContentLoad<Texture2D>(texturesRoot + assetName);
+		}
+		private Texture2D LoadBonusTexture(String assetName)
+		{
+			return ContentLoad<Texture2D>(texturesRoot + "Bonus/" + assetName);
+		}
+		private Texture2D LoadSpritesTexture(String assetName)
+		{
+			return ContentLoad<Texture2D>(texturesRoot + "Sprites/" + assetName);
 		}
 		private static T ContentLoad<T>(String assetName)
 		{
