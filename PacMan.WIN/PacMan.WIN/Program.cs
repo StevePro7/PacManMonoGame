@@ -1,22 +1,18 @@
-﻿using System;
+﻿using WindowsGame.Common;
 
-namespace PacMan.WIN
+namespace WindowsGame
 {
-#if WINDOWS || LINUX
-    /// <summary>
-    /// The main class.
-    /// </summary>
-    public static class Program
-    {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            using (var game = new Game1())
-                game.Run();
-        }
-    }
-#endif
+	static class Program
+	{
+		/// <summary>
+		/// The main entry point for the application.
+		/// </summary>
+		static void Main()
+		{
+			using (AnGame game = new AnGame())
+			{
+				game.Run();
+			}
+		}
+	}
 }
