@@ -18,7 +18,7 @@ namespace WindowsGame.UnitTests.Managers
 		public void LoadQuestionDataTest()
 		{
 			// Arrange.
-			String line = "3;WHICH OF THE FOLLOWING|CHARACTERS IS A NON-SMOKER?;KRUSTY;NELSON;GRAMPA SIMPSON;MRS. KRABAPPLE;page01;02-GeneralSimpsonsTrivia.csv";
+			String line = String.Empty;
 
 			// Act.
 			Question question = QuestionManager.LoadQuestion(line);

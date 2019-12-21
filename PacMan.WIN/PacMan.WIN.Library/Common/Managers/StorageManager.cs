@@ -21,7 +21,7 @@ namespace WindowsGame.Common.Managers
 
 		public void Initialize()
 		{
-			fileName = "SimpsonsTrivia.xml";
+			fileName = "PacMan.xml";
 		}
 
 		public void LoadContent()
