@@ -11,7 +11,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsGame</RootNamespace>
-    <AssemblyName>SimpsonsTrivia.WIN</AssemblyName>
+    <AssemblyName>PacMan.WIN</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -115,9 +115,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpsonsTrivia.WIN.Library\SimpsonsTrivia.WIN.Library.csproj">
+    <ProjectReference Include="..\PacMan.WIN.Library\PacMan.WIN.Library.csproj">
       <Project>{c16d0cd9-8adf-4487-a909-55cf0d103db4}</Project>
-      <Name>SimpsonsTrivia.WIN.Library</Name>
+      <Name>PacMan.WIN.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

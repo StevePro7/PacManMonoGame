@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsGame.UnitTests</RootNamespace>
-    <AssemblyName>SimpsonsTrivia.WIN.UnitTests</AssemblyName>
+    <AssemblyName>PacMan.WIN.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -59,9 +59,9 @@
     <None Include="UnitTests.nunit" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpsonsTrivia.WIN.Library\SimpsonsTrivia.WIN.Library.csproj">
+    <ProjectReference Include="..\PacMan.WIN.Library\PacMan.WIN.Library.csproj">
       <Project>{c16d0cd9-8adf-4487-a909-55cf0d103db4}</Project>
-      <Name>SimpsonsTrivia.WIN.Library</Name>
+      <Name>PacMan.WIN.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
