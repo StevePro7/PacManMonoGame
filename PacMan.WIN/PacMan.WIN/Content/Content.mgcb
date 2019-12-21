@@ -13,85 +13,112 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Audio/bg1.mp3
+#begin Data/Config/GlobalConfig.xml
+/copy:Data/Config/GlobalConfig.xml
+
+#begin Data/Levels/Grid.txt
+/copy:Data/Levels/Grid.txt
+
+#begin Fonts/MenuItem.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/MenuItem.spritefont
+
+#begin Fonts/Score.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/Score.spritefont
+
+#begin Fonts/ScoreEvent.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/ScoreEvent.spritefont
+
+#begin Sound/bg1.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/bg1.mp3
+/build:Sound/bg1.mp3
 
-#begin Audio/bg2.mp3
+#begin Sound/bg2.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/bg2.mp3
+/build:Sound/bg2.mp3
 
-#begin Audio/bg3.mp3
+#begin Sound/bg3.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/bg3.mp3
+/build:Sound/bg3.mp3
 
-#begin Audio/bgghost.mp3
+#begin Sound/bgghost.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/bgghost.mp3
+/build:Sound/bgghost.mp3
 
-#begin Audio/bgghosteyes.mp3
+#begin Sound/bgghosteyes.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/bgghosteyes.mp3
+/build:Sound/bgghosteyes.mp3
 
-#begin Audio/eatfruit.mp3
+#begin Sound/eatfruit.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/eatfruit.mp3
+/build:Sound/eatfruit.mp3
 
-#begin Audio/eatghost.mp3
+#begin Sound/eatghost.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/eatghost.mp3
+/build:Sound/eatghost.mp3
 
-#begin Audio/eatpill1.mp3
+#begin Sound/eatpill1.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/eatpill1.mp3
+/build:Sound/eatpill1.mp3
 
-#begin Audio/eatpill2.mp3
+#begin Sound/eatpill2.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/eatpill2.mp3
+/build:Sound/eatpill2.mp3
 
-#begin Audio/extralife.mp3
+#begin Sound/extralife.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/extralife.mp3
+/build:Sound/extralife.mp3
 
-#begin Audio/killed.mp3
+#begin Sound/killed.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/killed.mp3
+/build:Sound/killed.mp3
 
-#begin Audio/newgame.mp3
+#begin Sound/newgame.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/newgame.mp3
+/build:Sound/newgame.mp3
 
-#begin Audio/newlevel.mp3
+#begin Sound/newlevel.mp3
 /importer:Mp3Importer
-/processor:SoundEffectProcessor
+/processor:SongProcessor
 /processorParam:Quality=Best
-/build:Audio/newlevel.mp3
+/build:Sound/newlevel.mp3
 
-#begin bonus/Apple.png
+#begin Textures/Bonus/Apple.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -101,9 +128,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Apple.png
+/build:Textures/Bonus/Apple.png
 
-#begin bonus/Banana.png
+#begin Textures/Bonus/Banana.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -113,9 +140,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Banana.png
+/build:Textures/Bonus/Banana.png
 
-#begin bonus/Bell.png
+#begin Textures/Bonus/Bell.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -125,9 +152,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Bell.png
+/build:Textures/Bonus/Bell.png
 
-#begin bonus/Cherry.png
+#begin Textures/Bonus/Cherry.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -137,9 +164,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Cherry.png
+/build:Textures/Bonus/Cherry.png
 
-#begin bonus/Key.png
+#begin Textures/Bonus/Key.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -149,9 +176,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Key.png
+/build:Textures/Bonus/Key.png
 
-#begin bonus/Orange.png
+#begin Textures/Bonus/Orange.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -161,9 +188,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Orange.png
+/build:Textures/Bonus/Orange.png
 
-#begin bonus/Pear.png
+#begin Textures/Bonus/Pear.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -173,9 +200,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Pear.png
+/build:Textures/Bonus/Pear.png
 
-#begin bonus/Pretzel.png
+#begin Textures/Bonus/Pretzel.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -185,9 +212,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Pretzel.png
+/build:Textures/Bonus/Pretzel.png
 
-#begin bonus/Strawberry.png
+#begin Textures/Bonus/Strawberry.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -197,9 +224,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:bonus/Strawberry.png
+/build:Textures/Bonus/Strawberry.png
 
-#begin sprites/Board.png
+#begin Textures/Sprites/Board.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -209,9 +236,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/Board.png
+/build:Textures/Sprites/Board.png
 
-#begin sprites/BoardFlash.png
+#begin Textures/Sprites/BoardFlash.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -221,9 +248,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/BoardFlash.png
+/build:Textures/Sprites/BoardFlash.png
 
-#begin sprites/Crump.png
+#begin Textures/Sprites/Crump.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -233,9 +260,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/Crump.png
+/build:Textures/Sprites/Crump.png
 
-#begin sprites/DyingSheetNew.png
+#begin Textures/Sprites/DyingSheetNew.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -245,9 +272,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/DyingSheetNew.png
+/build:Textures/Sprites/DyingSheetNew.png
 
-#begin sprites/ExtraLife.png
+#begin Textures/Sprites/ExtraLife.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -257,9 +284,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/ExtraLife.png
+/build:Textures/Sprites/ExtraLife.png
 
-#begin sprites/GhostBase.png
+#begin Textures/Sprites/GhostBase.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -269,9 +296,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/GhostBase.png
+/build:Textures/Sprites/GhostBase.png
 
-#begin sprites/GhostBase2.png
+#begin Textures/Sprites/GhostBase2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -281,9 +308,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/GhostBase2.png
+/build:Textures/Sprites/GhostBase2.png
 
-#begin sprites/GhostChased.png
+#begin Textures/Sprites/GhostChased.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -293,9 +320,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/GhostChased.png
+/build:Textures/Sprites/GhostChased.png
 
-#begin sprites/GhostEyes.png
+#begin Textures/Sprites/GhostEyes.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -305,9 +332,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/GhostEyes.png
+/build:Textures/Sprites/GhostEyes.png
 
-#begin sprites/GhostEyesCenter.png
+#begin Textures/Sprites/GhostEyesCenter.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -317,9 +344,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/GhostEyesCenter.png
+/build:Textures/Sprites/GhostEyesCenter.png
 
-#begin sprites/PacManEating1.png
+#begin Textures/Sprites/PacManEating1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -329,9 +356,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating1.png
+/build:Textures/Sprites/PacManEating1.png
 
-#begin sprites/PacManEating2.png
+#begin Textures/Sprites/PacManEating2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -341,9 +368,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating2.png
+/build:Textures/Sprites/PacManEating2.png
 
-#begin sprites/PacManEating3.png
+#begin Textures/Sprites/PacManEating3.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -353,9 +380,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating3.png
+/build:Textures/Sprites/PacManEating3.png
 
-#begin sprites/PacManEating4.png
+#begin Textures/Sprites/PacManEating4.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -365,9 +392,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating4.png
+/build:Textures/Sprites/PacManEating4.png
 
-#begin sprites/PacManEating5.png
+#begin Textures/Sprites/PacManEating5.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -377,9 +404,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating5.png
+/build:Textures/Sprites/PacManEating5.png
 
-#begin sprites/PacManEating6.png
+#begin Textures/Sprites/PacManEating6.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -389,9 +416,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating6.png
+/build:Textures/Sprites/PacManEating6.png
 
-#begin sprites/PacManEating7.png
+#begin Textures/Sprites/PacManEating7.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -401,9 +428,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating7.png
+/build:Textures/Sprites/PacManEating7.png
 
-#begin sprites/PacManEating8.png
+#begin Textures/Sprites/PacManEating8.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -413,9 +440,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating8.png
+/build:Textures/Sprites/PacManEating8.png
 
-#begin sprites/PacManEating9.png
+#begin Textures/Sprites/PacManEating9.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -425,9 +452,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PacManEating9.png
+/build:Textures/Sprites/PacManEating9.png
 
-#begin sprites/PowerPill.png
+#begin Textures/Sprites/PowerPill.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -437,9 +464,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/PowerPill.png
+/build:Textures/Sprites/PowerPill.png
 
-#begin sprites/Selection.png
+#begin Textures/Sprites/Selection.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -449,9 +476,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/Selection.png
+/build:Textures/Sprites/Selection.png
 
-#begin sprites/Title.png
+#begin Textures/Sprites/Title.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -461,5 +488,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:sprites/Title.png
+/build:Textures/Sprites/Title.png
 
