@@ -71,19 +71,19 @@ namespace WindowsGame.Common.Managers
 
 		public void PlayRightSoundEffect()
 		{
-			PlaySoundEffect(SoundEffectType.Right);
+			PlaySoundEffect(SoundEffectType2.Right);
 		}
 		public void PlayWrongSoundEffect()
 		{
-			PlaySoundEffect(SoundEffectType.Wrong);
+			PlaySoundEffect(SoundEffectType2.Wrong);
 		}
 		public void PlayCheatSoundEffect()
 		{
-			PlaySoundEffect(SoundEffectType.Cheat);
+			PlaySoundEffect(SoundEffectType2.Cheat);
 		}
 		public void PlayEarlySoundEffect()
 		{
-			PlaySoundEffect(SoundEffectType.Early);
+			PlaySoundEffect(SoundEffectType2.Early);
 		}
 
 		public void AlternateSound()
@@ -122,14 +122,14 @@ namespace WindowsGame.Common.Managers
 			MediaPlayerX.Play(song);
 			MediaPlayerX.IsRepeating = isRepeating;
 		}
-		private void PlaySoundEffect(SoundEffectType key)
+		private void PlaySoundEffect(SoundEffectType2 key)
 		{
 			if (!PlaySound)
 			{
 				return;
 			}
 
-			SoundEffectInstance value = Assets.SoundEffectDictionary[key];
+			SoundEffectInstance value = Assets.SoundEffectDictionary2[key];
 			value.Play();
 		}
 		private void SetVolume()

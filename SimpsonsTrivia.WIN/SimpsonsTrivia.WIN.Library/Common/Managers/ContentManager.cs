@@ -39,6 +39,9 @@ namespace WindowsGame.Common.Managers
 			// Fonts.
 			String fonts = String.Format("{0}/{1}/", contentRoot, Constants.FONTS_DIRECTORY);
 			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>(fonts + FONT_NAME);
+			Assets.MenuItem = Engine.Content.Load<SpriteFont>(fonts + "MenuItem");
+			Assets.Score = Engine.Content.Load<SpriteFont>(fonts + "Score");
+			Assets.ScoreEvent = Engine.Content.Load<SpriteFont>(fonts + "ScoreEvent");
 
 			// Textures.
 			Assets.SpritesheetTexture = LoadTexture(SPRITE_NAME);
@@ -49,10 +52,18 @@ namespace WindowsGame.Common.Managers
 
 			// Sound effects.
 			Assets.SoundEffectDictionary = new Dictionary<SoundEffectType, SoundEffectInstance>();
-			for (SoundEffectType key = SoundEffectType.Right; key <= SoundEffectType.Early; ++key)
+			for (SoundEffectType key = SoundEffectType.bg1; key <= SoundEffectType.newlevel; ++key)
 			{
 				SoundEffectInstance value = LoadSoundEffectInstance(key.ToString());
 				Assets.SoundEffectDictionary.Add(key, value);
+			}
+
+			// Sound effects2.
+			Assets.SoundEffectDictionary2 = new Dictionary<SoundEffectType2, SoundEffectInstance>();
+			for (SoundEffectType2 key = SoundEffectType2.Right; key <= SoundEffectType2.Early; ++key)
+			{
+				SoundEffectInstance value = LoadSoundEffectInstance(key.ToString());
+				Assets.SoundEffectDictionary2.Add(key, value);
 			}
 		}
 

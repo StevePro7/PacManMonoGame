@@ -26,6 +26,23 @@
 
 	public enum SoundEffectType
 	{
+		bg1,
+		bg2,
+		bg3,
+		bgghost,
+		bgghosteyes,
+		eatfruit,
+		eatghost,
+		eatpill1,
+		eatpill2,
+		extralife,
+		killed,
+		newgame,
+		newlevel,
+	}
+
+	public enum SoundEffectType2
+	{
 		Right,
 		Wrong,
 		Cheat,
