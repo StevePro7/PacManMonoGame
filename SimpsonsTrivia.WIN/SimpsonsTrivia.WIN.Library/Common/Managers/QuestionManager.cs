@@ -13,6 +13,7 @@ namespace WindowsGame.Common.Managers
 		void Initialize(String root);
 		void LoadContent();
 
+		void LoadLevelList(String type);
 		void LoadQuestionList(DifficultyType type);
 		Question LoadQuestion(Byte index);
 		Question LoadQuestion(String line);
@@ -88,12 +89,21 @@ namespace WindowsGame.Common.Managers
 			Reset();
 		}
 
+		public void LoadLevelList(String type)
+		{
+			String file = String.Format("{0}{1}/{2}/{3}/{4}.txt", questionRoot, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY, Constants.LEVELS_DIRECTORY, type);
+
+			var lines = MyGame.Manager.FileManager.LoadTxt(file);
+			foreach (String line in lines)
+			{
+			}
+		}
+
 		public void LoadQuestionList(DifficultyType type)
 		{
 			QuestionList.Clear();
 
-			String file = String.Format("{0}{1}/{2}/{3}/{4}.txt", questionRoot, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY,
-				Constants.LEVELS_DIRECTORY, type);
+			String file = String.Format("{0}{1}/{2}/{3}/{4}.txt", questionRoot, Constants.CONTENT_DIRECTORY, Constants.DATA_DIRECTORY, Constants.LEVELS_DIRECTORY, type);
 
 			var lines = MyGame.Manager.FileManager.LoadTxt(file);
 			foreach (String line in lines)

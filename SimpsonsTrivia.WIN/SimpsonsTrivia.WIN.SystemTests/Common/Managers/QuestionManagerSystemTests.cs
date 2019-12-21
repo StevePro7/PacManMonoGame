@@ -16,6 +16,13 @@ namespace WindowsGame.SystemTests.Common.Managers
 		}
 
 		[Test]
+		public void LoadLevelListTest()
+		{
+			const String type = "Grid";
+			QuestionManager.LoadLevelList(type);
+		}
+
+		[Test]
 		public void LoadQuestionListTest()
 		{
 			// Arrange.
