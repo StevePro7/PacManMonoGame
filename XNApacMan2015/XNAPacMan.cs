@@ -24,12 +24,12 @@ namespace XNAPacMan {
 
         public XNAPacMan() {
 			Logger.Initialize();
-			Logger.Info("hello there");
             // Pac Man 2 is somewhat resolution-independent, but runs best at 720x640.
             graphics_ = new GraphicsDeviceManager(this);
             graphics_.PreferredBackBufferHeight = 720;
             graphics_.PreferredBackBufferWidth = 640;
 
+			IsMouseVisible = true;
             // Pac Man 2 always updates 1000 times per second. Framerate may vary.
             IsFixedTimeStep = true;
             TargetElapsedTime = TimeSpan.FromMilliseconds(1);

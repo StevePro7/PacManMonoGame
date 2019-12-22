@@ -77,3 +77,32 @@ answer tile is inky target tile
 
 clyde
 target tile = blinky i.e. directly on PacMan tile but this is only the case when Clyde is 8 or more tiles away from PacMan otherwise clyde chooses target tile as his scatter tile
+
+
+
+22/12/2019
+Grid
+1	TileType	Open
+0	TileType	Closed
+2	TileType	Home
+3	TileType	Open
+
+
+FindDirection
+assumes that the target position has been calculated and the distance between the destination target position and the ghost position is calculated and depending on what is bigger then set the list of 4x directions in order and work out the first feasible direction to go to
+
+
+Scatter
+when in scatter mode the destination target tiles are hardcoded depending on the ghost
+
+
+Attack
+when in attack mode the destination target tile is dependent on the ghost algorithm
+
+e.g.
+Blinky
+ blinky attack tile = PacMan current tile
+ direction_ = FindDirection(player_.Position.Tile);
+
+Pinky
+ pinky attack tile = 2x tiles in front of PacMan current tile

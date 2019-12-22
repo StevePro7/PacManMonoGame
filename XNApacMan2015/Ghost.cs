@@ -36,6 +36,7 @@ namespace XNAPacMan {
             wiggle_ = true;
             direction_ = new Direction();
             lastJunction_ = new Point();
+			infoJunction_ = lastJunction_;
             scatterTiles_ = Constants.scatterTiles(identity);
         }
 
@@ -53,7 +54,8 @@ namespace XNAPacMan {
             position_ = Constants.startPosition(identity_);
             scheduleStateEval_ = true;
             lastJunction_ = new Point();
-            player_ = player;
+			infoJunction_ = lastJunction_;
+			player_ = player;
             scatterModesLeft_ = 4;
             UpdateSpeed();
         }
@@ -86,6 +88,11 @@ namespace XNAPacMan {
             // After the AI has had the occasion to run, update lastJuntion.
             if (position_.DeltaPixel == Point.Zero && IsAJunction(position_.Tile)) {
                 lastJunction_ = position_.Tile;
+				if (infoJunction_ != lastJunction_)
+				{
+					Logger.Info(identity_ + " => " + lastJunction_);
+				}
+				infoJunction_ = lastJunction_;
             }
             Move();
         }
@@ -165,9 +172,17 @@ namespace XNAPacMan {
                     }
                     break;
                 case GhostState.Scatter:
-                    // Attempt to reverse direction upon entering this state
-                    if (previousState_ == GhostState.Attack) {
-                        scatterModesLeft_--;
+					// Attempt to reverse direction upon entering this state
+					if (previousState_ == GhostState.Attack) {
+						scatterModesLeft_--;
+
+						//var od = OppositeDirection(direction_);
+						//Tile t = NextTile(od);
+						//if (t.IsOpen)
+						//{
+						//	direction_ = od;
+						//}
+
                         if (NextTile(OppositeDirection(direction_)).IsOpen) {
                             direction_ = OppositeDirection(direction_);
                         }
@@ -320,8 +335,13 @@ namespace XNAPacMan {
         /// Guides the ghost towards his "favored" area of the board, as defined by scatterTiles_.
         /// </summary> 
         void AIScatter() {
-            // As with AIAttack(), all the method does is change direction if necessary,
-            // which only happens when exactly at a junction
+			// As with AIAttack(), all the method does is change direction if necessary,
+			// which only happens when exactly at a junction
+			Point tile = position_.Tile;
+
+
+			bool isjunc = IsAJunction(tile);
+
             if (position_.DeltaPixel != Point.Zero || !IsAJunction(position_.Tile)) {
                 return;
             }
@@ -361,7 +381,8 @@ namespace XNAPacMan {
                 return;
             }
 
-            // Attack AI may be overriden by certain tiles
+			// Attack AI may be overriden by certain tiles
+			bool check = AIOverride();
             if (AIOverride()) {
                 return;
             }
@@ -425,7 +446,10 @@ namespace XNAPacMan {
         /// </summary>
         void AttackAIPinky() {
             Tile nextTile = NextTile(player_.Direction, player_.Position);
-            Tile nextNextTile = NextTile(player_.Direction, new Position(nextTile.ToPoint, Point.Zero));
+
+			Position pos = new Position(nextTile.ToPoint, Point.Zero);
+			//Tile nextNextTile = NextTile(player_.Direction, pos);
+			Tile nextNextTile = NextTile(player_.Direction, new Position(nextTile.ToPoint, Point.Zero));
             direction_ = FindDirection(nextNextTile.ToPoint);
         }
 
@@ -551,12 +575,17 @@ namespace XNAPacMan {
                 }
             }
 
-            // Select first item in the list to meet two essential conditions : the path ahead is open,
-            // and it's not the opposite direction. If we can't meet both conditions, just return the first
-            // direction that leads to an open square. 
-            int index = directions.FindIndex(i => i != OppositeDirection(direction_) && NextTile(i).IsOpen);
+			// Select first item in the list to meet two essential conditions : the path ahead is open,
+			// and it's not the opposite direction. If we can't meet both conditions, just return the first
+			// direction that leads to an open square. 
+			var od = OppositeDirection(direction_);
+			var bob = directions.FindIndex(i => i != od);
+			var sgb = directions.FindIndex(i => i != od && NextTile(i).IsOpen);
+
+			int index = directions.FindIndex(i => i != OppositeDirection(direction_) && NextTile(i).IsOpen);
             if (index != -1) {
-                return directions[index];
+				Direction dir = directions[index];
+				return directions[index];
             }
             else {
                 // Put a breakpoint here, this should never happen.
@@ -584,33 +613,41 @@ namespace XNAPacMan {
             switch (d) {
                 case Direction.Up:
                     if (p.Tile.Y - 1 < 0) {
-                        return Grid.TileGrid[p.Tile.X, p.Tile.Y];
+						Tile t = Grid.TileGrid[p.Tile.X, p.Tile.Y];
+						return Grid.TileGrid[p.Tile.X, p.Tile.Y];
                     }
                     else {
-                        return Grid.TileGrid[p.Tile.X, p.Tile.Y - 1];
+						Tile t = Grid.TileGrid[p.Tile.X, p.Tile.Y - 1];
+						return Grid.TileGrid[p.Tile.X, p.Tile.Y - 1];
                     }
                 case Direction.Down:
                     if (p.Tile.Y + 1 >= Grid.Height) {
-                        return Grid.TileGrid[p.Tile.X, p.Tile.Y];
+						Tile t = Grid.TileGrid[p.Tile.X, p.Tile.Y];
+						return Grid.TileGrid[p.Tile.X, p.Tile.Y];
                     }
                     else {
-                        return Grid.TileGrid[p.Tile.X, p.Tile.Y + 1];
+						Tile t = Grid.TileGrid[p.Tile.X, p.Tile.Y + 1];
+						return Grid.TileGrid[p.Tile.X, p.Tile.Y + 1];
                     }
                 case Direction.Left:
                     // Special case : the tunnel
                     if (p.Tile.X == 0) {
-                        return Grid.TileGrid[Grid.Width - 1, p.Tile.Y];
+						Tile t = Grid.TileGrid[Grid.Width - 1, p.Tile.Y];
+						return Grid.TileGrid[Grid.Width - 1, p.Tile.Y];
                     }
                     else {
-                        return Grid.TileGrid[p.Tile.X - 1, p.Tile.Y];
+						Tile t = Grid.TileGrid[p.Tile.X - 1, p.Tile.Y];
+						return Grid.TileGrid[p.Tile.X - 1, p.Tile.Y];
                     }
                 case Direction.Right:
                     // Special case : the tunnel
                     if (p.Tile.X + 1 >= Grid.Width) {
-                        return Grid.TileGrid[0, p.Tile.Y];
+						Tile t = Grid.TileGrid[0, p.Tile.Y];
+						return Grid.TileGrid[0, p.Tile.Y];
                     }
                     else {
-                        return Grid.TileGrid[p.Tile.X + 1, p.Tile.Y];
+						Tile t = Grid.TileGrid[p.Tile.X + 1, p.Tile.Y];
+						return Grid.TileGrid[p.Tile.X + 1, p.Tile.Y];
                     }
                 default:
                     throw new ArgumentException();
@@ -766,7 +803,8 @@ namespace XNAPacMan {
         GhostState previousState_;
         List<Point> scatterTiles_;
         Point lastJunction_;
-        DateTime timeInCurrentState;
+		Point infoJunction_;
+		DateTime timeInCurrentState;
         Player player_;
         int updatesPerPixel_;
         bool scheduleStateEval_;
