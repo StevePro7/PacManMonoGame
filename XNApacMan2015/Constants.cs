@@ -72,7 +72,9 @@ namespace XNAPacMan {
                 switch (ghost) {
                     case Ghosts.Inky:
 						var val = (int)MathHelper.Clamp((20 - Level) / 2, 0, 10);
-						return (int)MathHelper.Clamp((20 - Level) / 2, 0, 10);
+						val = 0;
+						return val;
+						//return (int)MathHelper.Clamp((20 - Level) / 2, 0, 10);
                     case Ghosts.Clyde:
 						var val2 = InitialJumps(Ghosts.Inky, true) + 2;
 						return InitialJumps(Ghosts.Inky, true) + 2;

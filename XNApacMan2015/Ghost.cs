@@ -154,7 +154,7 @@ namespace XNAPacMan {
                              (position_.Tile.X == 15 && position_.DeltaPixel.X == 8))) {
                         if (position_.Tile.Y == 14) {
                             initialJumps_--;
-                            if (initialJumps_ == 0) {
+                            if (initialJumps_ <= 0) {
                                 if (position_.Tile.X == 11) {
                                     direction_ = Direction.Right;
                                 }
@@ -339,7 +339,6 @@ namespace XNAPacMan {
 			// which only happens when exactly at a junction
 			Point tile = position_.Tile;
 
-
 			bool isjunc = IsAJunction(tile);
 
             if (position_.DeltaPixel != Point.Zero || !IsAJunction(position_.Tile)) {
@@ -475,7 +474,9 @@ namespace XNAPacMan {
         /// he will near the player using Blinky's AI.
         /// </summary>
         void AttackAIClyde() {
-            float distanceToPlayer = Vector2.Distance(
+			Vector2 v1 = new Vector2(player_.Position.Tile.X, player_.Position.Tile.Y);
+			Vector2 v2 = new Vector2(position_.Tile.X, position_.Tile.Y);
+			float distanceToPlayer = Vector2.Distance(
                 new Vector2(player_.Position.Tile.X, player_.Position.Tile.Y),
                 new Vector2(position_.Tile.X, position_.Tile.Y));
             if (distanceToPlayer >= 8) {

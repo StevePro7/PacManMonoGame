@@ -105,4 +105,22 @@ Blinky
  direction_ = FindDirection(player_.Position.Tile);
 
 Pinky
+
+Inky
  pinky attack tile = 2x tiles in front of PacMan current tile
+ calc 2x tiles ahead of PacMan
+ create vector from Blinky to PM target tile [2x tiles in front]
+ double vector
+ 
+
+Clyde
+ calc distance from Clyde to PacMan.  If distance >= 8 then attack PM tile
+ just like Blinky.  Otherwise scatter
+
+26
+38
+64
+
+ 29
+-32
+- 3
