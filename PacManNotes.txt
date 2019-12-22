@@ -1,0 +1,79 @@
+PacMan notes
+21/12/2019
+
+blinky	red
+clyde	orange
+inky	light sky blue
+pinky	light pink
+
+
+Inky uses Blinky to determine tile / AI
+
+
+Board dimensions
+448 x 496
+
+28 x 31 tiles
+where each tile is 16x16
+
+
+Level
+Scatter
+Chase
+
+
+Blinky act like in Chase mode when in Scatter mode
+e.g.
+Level	20 dots remaining
+
+
+CHASE
+target sytem
+
+when on fresh tile ghost determine which tile to go to next
+work out the target i.e. where is PacMan and see if can go 3x directions
+i.e. 4x directions less the 180 deg to previous direction so as to not back track
+or less solid tile
+whichever tile is closer then that is the direction ghost will choose
+
+if 2x distant options are the same then choose this priority:
+top
+left
+down
+right
+
+
+
+SCATTER
+pinky	light pink	top left
+blinky	red		top right
+clyde	orange		bot left
+inky	light sky blue	bot right
+
+
+when ghosts change from scatter to chase more or chase to scatter mode
+the first thing they do is switch direction to 180 deg so go opposite way
+
+
+AI
+blinky will simply target PacMan exact tile currently on
+
+
+pinky will target 4x tiles in front of PacMan
+so
+if PacMan is going left then this will be 4x tiles to the left of PacMan position
+if PacMan is going rght then this will be 4x tiles to the rght of PacMan position
+if PacMan is going down then this will be 4x tiles to the down of PacMan position
+ 
+exception is up
+if PacMan is going -up- then this will be 4x tiles to the -up- AND 4x tiles left of PacMan position
+
+inky uses PacMan target tile and blinky target tile to determine where to go
+intermediate tile =
+inky look at 2x tiles in front of PacMan position - again if up then is 2x tiles up and 2x tiles left
+
+take vector from blinky to PacMan "intermediate" tile and rotate 180 degree
+answer tile is inky target tile 
+
+clyde
+target tile = blinky i.e. directly on PacMan tile but this is only the case when Clyde is 8 or more tiles away from PacMan otherwise clyde chooses target tile as his scatter tile
