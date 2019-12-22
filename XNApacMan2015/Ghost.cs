@@ -189,7 +189,9 @@ namespace XNAPacMan {
                     }
                     AIScatter();
                     int timeInScatterMode = scatterModesLeft_ <= 2 ? 5 : 7;
-                    if ((DateTime.Now - timeInCurrentState) > TimeSpan.FromSeconds(timeInScatterMode)) {
+					//int timeInScatterMode = 999999;	// stevepro - infinite scatter
+
+					if ((DateTime.Now - timeInCurrentState) > TimeSpan.FromSeconds(timeInScatterMode)) {
                         State = GhostState.Attack;
                     }
                     break;
