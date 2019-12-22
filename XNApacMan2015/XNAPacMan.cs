@@ -23,6 +23,8 @@ namespace XNAPacMan {
         //SoundBank soundBank_;
 
         public XNAPacMan() {
+			Logger.Initialize();
+			Logger.Info("hello there");
             // Pac Man 2 is somewhat resolution-independent, but runs best at 720x640.
             graphics_ = new GraphicsDeviceManager(this);
             graphics_.PreferredBackBufferHeight = 720;

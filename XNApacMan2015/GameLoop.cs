@@ -34,14 +34,16 @@ namespace XNAPacMan {
             // TODO: Construct any child components here
         }
 
+		private bool pause;
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
         public override void Initialize() {
-            // We don't want XNA calling this method each time we resume from the menu,
-            // unfortunately, it'll call it whatever we try. So the only thing
-            // we can do is check if it has been called already and return. Yes, it's ugly.
+			// We don't want XNA calling this method each time we resume from the menu,
+			// unfortunately, it'll call it whatever we try. So the only thing
+			// we can do is check if it has been called already and return. Yes, it's ugly.
+			pause = false;
             if (spriteBatch_ != null) {
                 //GhostSoundsManager.ResumeLoops();
                 return;
@@ -99,9 +101,12 @@ namespace XNAPacMan {
 			// ghosts_ = new List<Ghost> { new Ghost(Game, player_, Ghosts.Blinky), new Ghost(Game, player_, Ghosts.Clyde), new Ghost(Game, player_, Ghosts.Inky), new Ghost(Game, player_, Ghosts.Pinky)};
 			//ghosts_[2].SetBlinky(ghosts_[0]); // Oh, dirty hack. Inky needs this for his AI.
 			//soundBank_.PlayCue("Intro");
-			LockTimer = TimeSpan.FromMilliseconds(4500);
 
-            base.Initialize();
+			// stevepro lock start at 4.5s
+			//LockTimer = TimeSpan.FromMilliseconds(4500);
+			LockTimer = TimeSpan.FromMilliseconds(0);
+
+			base.Initialize();
         }
 
         /// <summary>
@@ -114,6 +119,16 @@ namespace XNAPacMan {
 			{
 				Game.Exit();
 			}
+			if (Keyboard.GetState().IsKeyDown(Keys.Q))
+			{
+				pause = !pause;
+			}
+
+			if (pause)
+			{
+				return;
+			}
+
             // Some events (death, new level, etc.) lock the game for a few moments.
             if (DateTime.Now - eventTimer_ < LockTimer) {
                 ghosts_.ForEach(i => i.LockTimer(gameTime));
