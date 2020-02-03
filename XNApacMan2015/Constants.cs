@@ -14,10 +14,10 @@ namespace XNAPacMan {
     static class Constants {
 
         // Dispersion tiles for each ghost
-        public static readonly List<Point> scatterTilesBlinky =  new List<Point> {   new Point(21, 1),   new Point(26, 1),
-                                                                            new Point(26, 5),   new Point(21, 5)    
-        };
-        public static readonly List<Point> scatterTilesPinky = new List<Point> {   new Point(1, 1),    new Point(6, 1),
+        public static readonly List<Point> scatterTilesBlinky =  new List<Point> {   new Point(21, 1),   new Point(26, 1), new Point(26, 5),   new Point(21, 5) };
+		//public static readonly List<Point> scatterTilesBlinky = new List<Point> { new Point(21, 8) };
+
+		public static readonly List<Point> scatterTilesPinky = new List<Point> {   new Point(1, 1),    new Point(6, 1),
                                                                             new Point(6, 5),    new Point(1, 5)     
         };
         public static readonly List<Point> scatterTilesClyde = new List<Point> {   new Point(6, 23),   new Point(9, 23),

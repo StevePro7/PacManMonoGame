@@ -93,13 +93,13 @@ namespace XNAPacMan {
 			var inky = new Ghost(Game, player_, Ghosts.Inky);
 			var pinky = new Ghost(Game, player_, Ghosts.Pinky);
 
-			ghosts_.Add(blinky);
-			ghosts_.Add(clyde);
+			//ghosts_.Add(blinky);
+			//ghosts_.Add(clyde);
 			ghosts_.Add(inky);
-			ghosts_.Add(pinky);
+			//ghosts_.Add(pinky);
 
 			// ghosts_ = new List<Ghost> { new Ghost(Game, player_, Ghosts.Blinky), new Ghost(Game, player_, Ghosts.Clyde), new Ghost(Game, player_, Ghosts.Inky), new Ghost(Game, player_, Ghosts.Pinky)};
-			ghosts_[2].SetBlinky(ghosts_[0]); // Oh, dirty hack. Inky needs this for his AI.
+			//ghosts_[2].SetBlinky(ghosts_[0]); // Oh, dirty hack. Inky needs this for his AI.
 			//ghosts_[1].SetBlinky(ghosts_[0]); // Oh, dirty hack. Inky needs this for his AI.
 			//soundBank_.PlayCue("Intro");
 

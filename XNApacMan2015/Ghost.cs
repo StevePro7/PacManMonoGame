@@ -90,7 +90,7 @@ namespace XNAPacMan {
                 lastJunction_ = position_.Tile;
 				if (infoJunction_ != lastJunction_)
 				{
-					Logger.Info(identity_ + " => " + lastJunction_);
+					//Logger.Info(identity_ + " => " + lastJunction_);
 				}
 				infoJunction_ = lastJunction_;
             }
@@ -141,6 +141,9 @@ namespace XNAPacMan {
                         else {
                             State = GhostState.Attack;
                         }
+
+						string msg = $"{identity_} {State} {direction_}";
+						Logger.Info(msg);
                         return;
                     }
                     // Ghosts move up when they are aligned with the entrance
@@ -192,7 +195,7 @@ namespace XNAPacMan {
 					//int timeInScatterMode = 999999;	// stevepro - infinite scatter
 
 					if ((DateTime.Now - timeInCurrentState) > TimeSpan.FromSeconds(timeInScatterMode)) {
-                        State = GhostState.Attack;
+                     //   State = GhostState.Attack;		// stevepro
                     }
                     break;
                 case GhostState.Dead:
