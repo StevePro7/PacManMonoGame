@@ -553,7 +553,17 @@ namespace XNAPacMan {
             int xDistance = destination.X - position_.Tile.X;
             int yDistance = destination.Y - position_.Tile.Y;
 
-            var directions = new List<Direction>(4);
+			// ADRIANA Check these cases!
+			if ( 0 == xDistance)
+			{
+				Logger.Info("xDistance zero");
+			}
+			if (0 == yDistance)
+			{
+				Logger.Info("yDistance zero");
+			}
+
+			var directions = new List<Direction>(4);
 
             // Order directions by shortest path. Yes this is dumb code, don't shoot me. At least it's COMMENTED, huh ?
             if (Math.Abs(xDistance) > Math.Abs(yDistance)) {
