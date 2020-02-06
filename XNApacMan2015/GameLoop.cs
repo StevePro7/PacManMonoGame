@@ -95,8 +95,8 @@ namespace XNAPacMan {
 
 			//ghosts_.Add(blinky);
 			//ghosts_.Add(clyde);
-			ghosts_.Add(inky);
-			//ghosts_.Add(pinky);
+			//ghosts_.Add(inky);
+			ghosts_.Add(pinky);
 
 			// ghosts_ = new List<Ghost> { new Ghost(Game, player_, Ghosts.Blinky), new Ghost(Game, player_, Ghosts.Clyde), new Ghost(Game, player_, Ghosts.Inky), new Ghost(Game, player_, Ghosts.Pinky)};
 			//ghosts_[2].SetBlinky(ghosts_[0]); // Oh, dirty hack. Inky needs this for his AI.

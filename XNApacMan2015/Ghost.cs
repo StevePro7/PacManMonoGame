@@ -135,10 +135,20 @@ namespace XNAPacMan {
                         else {
                             direction_ = Direction.Right;
                         }
-                        if (scatterModesLeft_ > 0) {
-                            State = GhostState.Scatter;
-                        }
-                        else {
+                        if (scatterModesLeft_ > 0)
+						{
+							//stevepro
+							//State = GhostState.Scatter;
+							{
+								State = GhostState.Attack;
+								// Compensate for the opposite
+								if (direction_ == Direction.Left) { direction_ = Direction.Right; }
+								else if(direction_ == Direction.Right) { direction_ = Direction.Left; }
+							}
+							
+						}
+                        else
+						{
                             State = GhostState.Attack;
                         }
 
@@ -454,6 +464,8 @@ namespace XNAPacMan {
 			Position pos = new Position(nextTile.ToPoint, Point.Zero);
 			//Tile nextNextTile = NextTile(player_.Direction, pos);
 			Tile nextNextTile = NextTile(player_.Direction, new Position(nextTile.ToPoint, Point.Zero));
+
+			var point = nextNextTile.ToPoint;
             direction_ = FindDirection(nextNextTile.ToPoint);
         }
 
@@ -588,6 +600,23 @@ namespace XNAPacMan {
 			var bob = directions.FindIndex(i => i != od);
 			var sgb = directions.FindIndex(i => i != od && NextTile(i).IsOpen);
 
+
+			for(int i = 0; i <  directions.Count; i++)
+			{
+				var dirX = directions[i];
+				var tile = NextTile(dirX);
+				var open = tile.IsOpen;
+
+				if (dirX != od)
+				{
+					if (open)
+					{
+						var idx = i;
+						break;
+					}
+				}
+			}
+
 			int index = directions.FindIndex(i => i != OppositeDirection(direction_) && NextTile(i).IsOpen);
             if (index != -1) {
 				Direction dir = directions[index];
@@ -606,7 +635,8 @@ namespace XNAPacMan {
         /// <param name="d">Direction in which to look</param>
         /// <returns>The tile</returns>
         Tile NextTile(Direction d) {
-            return NextTile(d, position_);
+			Tile tile = NextTile(d, position_); ;
+			return NextTile(d, position_);
         }
 
         /// <summary>

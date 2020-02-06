@@ -1,0 +1,60 @@
+PacMan notes 02
+06/02/2020
+
+Attack
+
+use Pinky as an example because he goes top left
+Pinky leaves home but make attack immed and turn left to go up top left
+
+hard code PacMan and Pinky
+NB: PacMan direction is auto set to Right
+and Pinky  direction is currently : Left
+
+6  5		PacMan
+9  11		Pinky
+
+so nextNextTile	i.e. 2x tiles right of 6, 5
+8  5
+
+direction_ = FindDirection(nextNextTile.ToPoint);
+direction_ = FindDirection(8, 5);
+
+FindDirection
+
+destination = 	 8  5		PacMan + 2
+position_.Tile = 9  11		Pinky
+
+01.
+Logic to get 4x directions
+
+02.
+Logic to filter out opposite direction(left) and any next tiles that are blocked
+i.e. are open
+
+so iterate thru the 4x next tiles and determine 
+if the Upxx tile from this tile isOpen then add
+if the Down tile from this tile isOpen then add
+if the Left tile from this tile isOpen then add
+if the Rght tile from this tile isOpen then add
+
+however exclude the opposite direction next tile
+
+
+CK logic will be a little different because I always have to check if there is 1x valid way to go only then simply return that one
+
+
+Try this:
+have the hard code list<direction>(4)
+with the eight combinations
+
+tile return all possible [open] next tiles can go in that direction from this tile
+then iterate thru all 4x elements in the selected collection
+if (opposite) then continue
+if (direction not in tile) then continue
+return first tile hit
+
+ISSUE
+the only problem with this is that direction to target tile will be deterministic
+
+one thing that I do notice is that for each pair of list<direction>(4) there are 2x directions same + 2x diff
+could swap this to make more random

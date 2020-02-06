@@ -24,7 +24,7 @@ namespace XNAPacMan {
         public Point DeltaPixel;
     }
 
-    public enum Direction { Up, Down, Left, Right };
+    public enum Direction { None, Up, Down, Left, Right };
     public enum State { Start, Normal, Dying };
 
     /// <summary>
@@ -266,8 +266,11 @@ namespace XNAPacMan {
             state_ = State.Start;
             direction_ = Direction.Right;
             usedFramesIndex_ = new int[] { 0, 1, 2 };
-            position_ = new Position { Tile = new Point(13, 23), DeltaPixel = new Point(8, 0) };
-            updateCount_ = 0;
+
+			//stevepro
+			//position_ = new Position { Tile = new Point(13, 23), DeltaPixel = new Point(8, 0) };
+			position_ = new Position { Tile = new Point(6, 5), DeltaPixel = new Point(8, 0) };
+			updateCount_ = 0;
         }
 
 
