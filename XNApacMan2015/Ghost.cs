@@ -546,12 +546,23 @@ namespace XNAPacMan {
         /// <param name="destination">Where we want to go</param>
         /// <returns>Where to go next</returns>
         Direction FindDirection(Point destination) {
-            // We use a stupid but very efficient algorithm : go in the direction that
-            // closes most distance between position and destination. This works well given
-            // there are no dead ends and multiple paths leading to the destination.
-            // However, we can never turn 180, and will rather choose a less-than-optimal path.
-            int xDistance = destination.X - position_.Tile.X;
-            int yDistance = destination.Y - position_.Tile.Y;
+			// We use a stupid but very efficient algorithm : go in the direction that
+			// closes most distance between position and destination. This works well given
+			// there are no dead ends and multiple paths leading to the destination.
+			// However, we can never turn 180, and will rather choose a less-than-optimal path.
+
+			// srce = enemy
+			// dest = gamer
+			int srceX = 10;
+			int srceY = 10;
+			int destX = 3;
+			int destY = 3;
+
+			int xDistance = destX - srceX;
+			int yDistance = destY - srceY;
+
+			int xDistance2 = destination.X - position_.Tile.X;
+			int yDistance2 = destination.Y - position_.Tile.Y;
 
 			// ADRIANA Check these cases!
 			if ( 0 == xDistance)
