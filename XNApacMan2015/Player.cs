@@ -268,9 +268,9 @@ namespace XNAPacMan {
             usedFramesIndex_ = new int[] { 0, 1, 2 };
 
 			//stevepro
-			position_ = new Position { Tile = new Point(13, 23), DeltaPixel = new Point(8, 0) };
-            // OLD delete
-            //position_ = new Position { Tile = new Point(6, 5), DeltaPixel = new Point(8, 0) };
+			//position_ = new Position { Tile = new Point(13, 23), DeltaPixel = new Point(8, 0) };
+            // OLD delete adriana
+            position_ = new Position { Tile = new Point(6, 5), DeltaPixel = new Point(8, 0) };
             // OLD delete
             updateCount_ = 0;
         }

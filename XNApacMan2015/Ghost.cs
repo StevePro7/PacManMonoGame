@@ -558,11 +558,16 @@ namespace XNAPacMan {
 			int destX = 3;
 			int destY = 3;
 
+			srceX = position_.Tile.X;
+			srceY = position_.Tile.Y;
+			destX = destination.X;
+			destY = destination.Y;
+
 			int xDistance = destX - srceX;
 			int yDistance = destY - srceY;
 
-			int xDistance2 = destination.X - position_.Tile.X;
-			int yDistance2 = destination.Y - position_.Tile.Y;
+			//int xDistance2 = destination.X - position_.Tile.X;
+			//int yDistance2 = destination.Y - position_.Tile.Y;
 
 			// ADRIANA Check these cases!
 			if ( 0 == xDistance)
