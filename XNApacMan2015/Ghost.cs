@@ -553,10 +553,10 @@ namespace XNAPacMan {
 
 			// srce = enemy
 			// dest = gamer
-			int srceX = 10;
-			int srceY = 10;
-			int destX = 3;
-			int destY = 3;
+			int srceX = 9;
+			int srceY = 11;
+			int destX = 15;
+			int destY = 23;
 
 			srceX = position_.Tile.X;
 			srceY = position_.Tile.Y;
